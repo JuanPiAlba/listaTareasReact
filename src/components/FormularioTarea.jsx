@@ -9,6 +9,9 @@ const FormularioTarea = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setTareas([...tareas, tarea])
+        //limpiar el imput
+        setTarea('')
+
     }
 
     return (
@@ -19,7 +22,7 @@ const FormularioTarea = () => {
                     <Button variant="primary" type="submit">Agregar</Button>
                 </Form.Group>
             </Form>
-            <ListaTareas></ListaTareas>
+            <ListaTareas propstareas={tareas}></ListaTareas>
 
         </>
     );
