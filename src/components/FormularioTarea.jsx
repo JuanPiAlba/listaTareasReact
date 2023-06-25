@@ -12,6 +12,12 @@ const FormularioTarea = () => {
         //limpiar el imput
         setTarea('')
 
+    };
+
+    const borrarTarea = (nombreTarea) => {
+        let copiaTarea = tareas.filter((ItemTarea)=> ItemTarea !== nombreTarea);
+        setTareas(copiaTarea)
+
     }
 
     return (
@@ -22,8 +28,7 @@ const FormularioTarea = () => {
                     <Button variant="primary" type="submit">Agregar</Button>
                 </Form.Group>
             </Form>
-            <ListaTareas propstareas={tareas}></ListaTareas>
-
+            <ListaTareas propstareas={tareas} borrarTarea={borrarTarea}></ListaTareas>
         </>
     );
 };
